@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elijah's Wild One & Christian Dedication 🌿🦁</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            safari: {
+              gold: '#D4AF37',
+              goldLight: '#F3E5AB',
+              darkGreen: '#233827',
+              deepGreen: '#18271C',
+              olive: '#5A6B48',
+              sage: '#8FA382',
+              sand: '#EFE8D8',
+              khaki: '#C4B28C',
+              terracotta: '#C86D51',
+              cream: '#FAF7F0',
+              warmCard: '#FCF9F2',
+              skyBlue: '#6BA4B8',
+              powderBlue: '#B8D5E5',
+              navy: '#1E2C3D'
+            }
+          },
+          fontFamily: {
+            title: ['Cinzel', 'serif'],
+            script: ['Sacramento', 'cursive'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            'safari': '0 20px 40px -15px rgba(35, 56, 39, 0.12)',
+            'gold': '0 10px 25px -5px rgba(212, 175, 55, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom safari ambient styling */
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #233827;
+      background-image: radial-gradient(#2d4933 1.5px, transparent 1.5px), radial-gradient(#2d4933 1.5px, #1a2c1e 1.5px);
+      background-size: 60px 60px;
+      background-position: 0 0, 30px 30px;
+    }
+
+    .safari-gold-text {
+      background: linear-gradient(135deg, #B8860B 0%, #D4AF37 40%, #FFE082 70%, #AA771C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-border-gradient {
+      border-image: linear-gradient(to right, #D4AF37, #F3E5AB, #D4AF37) 1;
+    }
+
+    .leaf-pattern {
+      background-color: #FAF7F0;
+      background-image: radial-gradient(#E8DFC9 0.8px, transparent 0.8px);
+      background-size: 16px 16px;
+    }
+
+    /* Ambient float animations */
+    @keyframes subtleFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+    .animate-float-slow {
+      animation: subtleFloat 5s ease-in-out infinite;
+    }
+    .animate-float-reverse {
+      animation: subtleFloat 6s ease-in-out infinite reverse;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #18271C;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #5A6B48;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+  </style>
+</head>
+<body class="text-stone-800 antialiased min-h-screen py-4 md:py-10 px-3 sm:px-4 flex justify-center items-center">
+
+  <!-- Audio player ambient audio (Web Audio Synthesized soothing tune) -->
+  <div class="fixed top-4 right-4 z-50 flex items-center gap-2">
+    <button id="musicToggleBtn" onclick="toggleAudio()" class="bg-safari-darkGreen/90 hover:bg-safari-darkGreen text-safari-goldLight border border-safari-gold/50 shadow-lg px-3 py-2 rounded-full text-xs font-semibold backdrop-blur-md flex items-center gap-2 transition-all transform hover:scale-105" title="Play safari lullaby melody">
+      <span id="musicIcon"><i data-lucide="music" class="w-4 h-4 text-safari-gold"></i></span>
+      <span id="musicText" class="hidden sm:inline">Play Melody</span>
+    </button>
+  </div>
+
+  <!-- Invitation Main Card Wrapper -->
+  <main class="w-full max-w-3xl bg-safari-cream leaf-pattern rounded-3xl shadow-2xl overflow-hidden border-4 border-safari-gold/60 relative my-6">
+
+    <!-- Top Decorative Safari Arch Foliage -->
+    <header class="relative bg-gradient-to-b from-safari-deepGreen via-safari-darkGreen to-safari-deepGreen text-safari-sand px-6 pt-10 pb-16 text-center overflow-hidden border-b-4 border-safari-gold">
+      <!-- Background SVG Palm Leaves & Vines -->
+      <div class="absolute inset-0 opacity-15 pointer-events-none flex justify-between">
+        <svg class="w-48 h-48 -top-8 -left-8 absolute text-safari-gold" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M10,90 Q40,10 90,10 Q60,60 10,90 Z" />
+          <path d="M10,90 Q20,30 70,30 Q45,70 10,90 Z" opacity="0.6" />
+        </svg>
+        <svg class="w-48 h-48 -bottom-8 -right-8 absolute text-safari-gold rotate-180" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M10,90 Q40,10 90,10 Q60,60 10,90 Z" />
+          <path d="M10,90 Q20,30 70,30 Q45,70 10,90 Z" opacity="0.6" />
+        </svg>
+      </div>
+
+      <!-- Top Mini Badges -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safari-gold/20 border border-safari-gold/40 text-safari-gold text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4 shadow-sm">
+        <span>🦁</span>
+        <span>A Wild Adventure Awaits</span>
+        <span>🌿</span>
+      </div>
+
+      <!-- Title Headline -->
+      <h2 class="font-script text-4xl sm:text-5xl md:text-6xl text-safari-goldLight font-bold drop-shadow-md">
+        Elijah is Turning One!
+      </h2>
+      <h1 class="font-title text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wider uppercase text-white mt-1">
+        1st Birthday & Christian Dedication
+      </h1>
+
+      <div class="w-24 h-1 bg-gradient-to-r from-transparent via-safari-gold to-transparent mx-auto my-4 rounded-full"></div>
+
+      <!-- Cute Animal Trio Illustration (SVGs) -->
+      <div class="flex justify-center items-end gap-3 sm:gap-6 mt-6 pt-2">
+        <!-- Baby Giraffe -->
+        <div class="animate-float-reverse flex flex-col items-center">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 bg-amber-100 rounded-full border-2 border-safari-gold flex items-center justify-center text-3xl sm:text-4xl shadow-md shadow-emerald-950/40">
+            🦒
+          </div>
+          <span class="text-[11px] font-semibold tracking-wide text-safari-goldLight mt-1">Joyful</span>
+        </div>
+
+        <!-- Baby Lion Hero -->
+        <div class="animate-float-slow flex flex-col items-center -mt-3">
+          <div class="w-20 h-20 sm:w-24 sm:h-24 bg-amber-200/90 rounded-full border-4 border-safari-gold flex items-center justify-center text-4xl sm:text-5xl shadow-xl shadow-black/40 ring-4 ring-safari-gold/30">
+            🦁
+          </div>
+          <span class="text-xs font-bold tracking-wider text-safari-gold uppercase mt-1">Our Little King</span>
+        </div>
+
+        <!-- Baby Elephant -->
+        <div class="animate-float-slow flex flex-col items-center">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 bg-sky-100 rounded-full border-2 border-safari-gold flex items-center justify-center text-3xl sm:text-4xl shadow-md shadow-emerald-950/40">
+            🐘
+          </div>
+          <span class="text-[11px] font-semibold tracking-wide text-safari-goldLight mt-1">Blessed</span>
+        </div>
+      </div>
+
+      <!-- Wave Separator Shape -->
+      <div class="absolute -bottom-1 left-0 right-0 h-6 bg-safari-cream" style="clip-path: ellipse(55% 100% at 50% 100%);"></div>
+    </header>
+
+    <div class="px-5 sm:px-8 md:px-12 py-6 space-y-10">
+
+      <!-- SECTION: Elijah's Heartfelt Personal Invitation Header -->
+      <section class="relative bg-gradient-to-br from-amber-50/80 via-white to-emerald-50/60 p-6 sm:p-8 rounded-2xl border-2 border-amber-200 shadow-md">
+        <div class="absolute -top-4 left-6 bg-safari-darkGreen text-safari-gold border border-safari-gold px-3.5 py-1 rounded-full text-xs font-bold tracking-wide uppercase flex items-center gap-1.5 shadow">
+          <span>💌</span> Personal Invitation
+        </div>
+
+        <div class="mt-2 text-stone-700 space-y-3 leading-relaxed text-sm sm:text-base font-medium">
+          <p class="font-title text-xl sm:text-2xl text-safari-darkGreen font-bold flex items-center gap-2">
+            Hello! My name is Elijah! 💙
+          </p>
+          <p class="text-stone-700">
+            With so much joy and excitement, I’m inviting you to celebrate two very special milestones in my life—my <strong>1st Birthday and Christian Dedication! 🎂✨</strong>
+          </p>
+          <div class="p-3.5 rounded-xl bg-amber-100/60 border-l-4 border-safari-gold text-stone-800 text-sm italic">
+            "A special seat has been reserved just for you! I would be so happy to have you join us as we celebrate this wonderful day filled with love, laughter, and blessings."
+          </div>
+          <p class="text-stone-700 font-semibold">
+            Please see the party details below. I can't wait to celebrate with you! 🐾🌿
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION: Real-time Countdown Timer to Nov 14, 2026 6:00 PM Manila Time -->
+      <section class="bg-safari-darkGreen text-white p-6 rounded-2xl border-2 border-safari-gold/80 shadow-lg text-center relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 opacity-10 text-8xl select-none pointer-events-none">🌿</div>
+        <p class="text-xs uppercase tracking-widest text-safari-gold font-bold mb-3 flex items-center justify-center gap-2">
+          <i data-lucide="clock" class="w-4 h-4"></i> Safari Expedition Countdown
+        </p>
+
+        <div class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto" id="countdownGrid">
+          <div class="bg-black/30 backdrop-blur-sm p-2 sm:p-3 rounded-xl border border-safari-gold/30">
+            <span id="days" class="font-title text-2xl sm:text-4xl font-extrabold text-safari-gold">00</span>
+            <span class="block text-[10px] sm:text-xs text-stone-300 uppercase tracking-wider mt-1 font-semibold">Days</span>
+          </div>
+          <div class="bg-black/30 backdrop-blur-sm p-2 sm:p-3 rounded-xl border border-safari-gold/30">
+            <span id="hours" class="font-title text-2xl sm:text-4xl font-extrabold text-safari-goldLight">00</span>
+            <span class="block text-[10px] sm:text-xs text-stone-300 uppercase tracking-wider mt-1 font-semibold">Hours</span>
+          </div>
+          <div class="bg-black/30 backdrop-blur-sm p-2 sm:p-3 rounded-xl border border-safari-gold/30">
+            <span id="minutes" class="font-title text-2xl sm:text-4xl font-extrabold text-safari-gold">00</span>
+            <span class="block text-[10px] sm:text-xs text-stone-300 uppercase tracking-wider mt-1 font-semibold">Mins</span>
+          </div>
+          <div class="bg-black/30 backdrop-blur-sm p-2 sm:p-3 rounded-xl border border-safari-gold/30">
+            <span id="seconds" class="font-title text-2xl sm:text-4xl font-extrabold text-white">00</span>
+            <span class="block text-[10px] sm:text-xs text-stone-300 uppercase tracking-wider mt-1 font-semibold">Secs</span>
+          </div>
+        </div>
+
+        <p id="countdownMessage" class="text-xs text-stone-300 mt-3 font-medium">
+          Philippine Time (PHT • UTC+8)
+        </p>
+      </section>
+
+      <!-- SECTION: When & Where Cards -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <!-- Date & Time Card -->
+        <div class="bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-safari flex flex-col justify-between relative hover:border-safari-gold transition-all">
+          <div class="flex items-start gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-safari-olive flex items-center justify-center shrink-0 shadow-inner">
+              <i data-lucide="calendar" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-safari-olive">Date & Time</span>
+              <h3 class="font-title text-lg font-bold text-stone-900 mt-0.5">Saturday</h3>
+              <p class="text-stone-800 font-semibold text-base">November 14, 2026</p>
+              <div class="inline-flex items-center gap-1.5 mt-2 px-2.5 py-1 rounded-md bg-stone-100 text-stone-700 text-xs font-semibold">
+                <i data-lucide="clock-3" class="w-3.5 h-3.5 text-safari-olive"></i>
+                <span>6:00 PM – 10:00 PM PHT</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-stone-100 flex gap-2">
+            <button onclick="addToGoogleCalendar()" class="flex-1 bg-stone-900 hover:bg-safari-darkGreen text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+              <i data-lucide="calendar-plus" class="w-3.5 h-3.5 text-safari-gold"></i>
+              <span>Google Cal</span>
+            </button>
+            <button onclick="downloadICS()" class="flex-1 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition-colors">
+              <i data-lucide="download" class="w-3.5 h-3.5 text-stone-600"></i>
+              <span>Apple / iCal</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Venue & Location Card -->
+        <div class="bg-white p-5 sm:p-6 rounded-2xl border border-stone-200 shadow-safari flex flex-col justify-between relative hover:border-safari-gold transition-all">
+          <div class="flex items-start gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 shadow-inner">
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <div class="flex-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-emerald-800">Expedition Camp</span>
+              <h3 class="font-title text-lg font-bold text-stone-900 mt-0.5">Meyers Catering Services</h3>
+              <p class="text-stone-600 text-xs sm:text-sm mt-1 leading-snug">
+                99 Dapitan St, Barangay Sto. Domingo Ave,<br>
+                Quezon City, 1114 Metro Manila
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-stone-100 flex gap-2">
+            <a href="https://maps.google.com/?q=Meyers+Catering+Services+99+Dapitan+St+Quezon+City" target="_blank" rel="noopener noreferrer" class="flex-1 bg-safari-darkGreen hover:bg-emerald-950 text-white text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-sm text-center">
+              <i data-lucide="navigation" class="w-3.5 h-3.5 text-safari-gold"></i>
+              <span>Open in Maps</span>
+            </a>
+            <button onclick="copyAddress()" id="copyAddressBtn" class="bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-semibold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1 transition-colors" title="Copy exact address">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span id="copyAddressText">Copy</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: Attire Guide (Dress Code) -->
+      <section class="bg-safari-warmCard p-6 rounded-2xl border border-stone-200 shadow-safari">
+        <div class="text-center max-w-md mx-auto mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-safari-olive bg-safari-olive/10 px-3 py-1 rounded-full inline-block">Dress Code Guide</span>
+          <h3 class="font-title text-xl sm:text-2xl font-bold text-stone-900 mt-2">What to Wear in the Jungle</h3>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">We’d love to see you dressed up in our celebration tones!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Guests & Relatives Palette -->
+          <div class="bg-white p-4 sm:p-5 rounded-xl border-2 border-dashed border-amber-300/80 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-lg">🌴</span>
+                <h4 class="font-bold text-stone-800 text-sm sm:text-base">Guests & Relatives</h4>
+              </div>
+              <p class="text-xs text-stone-600 font-medium mb-3">
+                Kindly wear <span class="text-safari-olive font-bold">Earth Tones</span> or <span class="text-safari-terracotta font-bold">Safari Tone</span> colors.
+              </p>
+            </div>
+
+            <!-- Visual Color Swatches -->
+            <div class="grid grid-cols-5 gap-2 pt-2 border-t border-stone-100">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-[#5A6B48] shadow-sm border border-black/10 ring-2 ring-white"></div>
+                <span class="text-[9px] font-semibold text-stone-600 mt-1">Olive</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-[#C4B28C] shadow-sm border border-black/10 ring-2 ring-white"></div>
+                <span class="text-[9px] font-semibold text-stone-600 mt-1">Khaki</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-[#8FA382] shadow-sm border border-black/10 ring-2 ring-white"></div>
+                <span class="text-[9px] font-semibold text-stone-600 mt-1">Sage</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-[#C86D51] shadow-sm border border-black/10 ring-2 ring-white"></div>
+                <span class="text-[9px] font-semibold text-stone-600 mt-1">Terracotta</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-[#E8DCB8] shadow-sm border border-black/10 ring-2 ring-white"></div>
+                <span class="text-[9px] font-semibold text-stone-600 mt-1">Sand</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Godparents (Ninongs & Ninangs) -->
+          <div class="bg-white p-4 sm:p-5 rounded-xl border-2 border-dashed border-sky-300/80 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="text-lg">🕊️</span>
+                <h4 class="font-bold text-stone-800 text-sm sm:text-base">Godparents (Ninongs & Ninangs)</h4>
+              </div>
+              <p class="text-xs text-stone-600 font-medium mb-3">
+                Please wear <span class="text-blue-600 font-bold">White</span> or <span class="text-blue-500 font-bold">Blue</span> attire for the sacred blessing.
+              </p>
+            </div>
+
+            <!-- Visual Color Swatches -->
+            <div class="grid grid-cols-4 gap-2 pt-2 border-t border-stone-100">
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-[#FFFFFF] shadow-sm border-2 border-stone-300 ring-2 ring-white"></div>
+                <span class="text-[9px] font-semibold text-stone-600 mt-1">White</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-[#E3F2FD] shadow-sm border border-black/10 ring-2 ring-white"></div>
+                <span class="text-[9px] font-semibold text-stone-600 mt-1">Powder</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-[#6BA4B8] shadow-sm border border-black/10 ring-2 ring-white"></div>
+                <span class="text-[9px] font-semibold text-stone-600 mt-1">Soft Blue</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-[#1E2C3D] shadow-sm border border-black/10 ring-2 ring-white"></div>
+                <span class="text-[9px] font-semibold text-stone-600 mt-1">Navy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: Expedition Itinerary (Timeline) -->
+      <section class="bg-white p-6 sm:p-8 rounded-2xl border border-stone-200 shadow-safari relative">
+        <div class="flex items-center justify-between border-b pb-4 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-safari-gold font-sans bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">Official Timeline</span>
+            <h3 class="font-title text-xl sm:text-2xl font-bold text-safari-darkGreen mt-1">Expedition Itinerary</h3>
+          </div>
+          <span class="text-3xl">🧭</span>
+        </div>
+
+        <div class="relative pl-6 sm:pl-8 border-l-2 border-safari-gold/40 space-y-6">
+
+          <!-- Stop 1: Dedication -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-0 w-8 h-8 rounded-full bg-safari-gold text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow">
+              ✝️
+            </div>
+            <div>
+              <div class="flex flex-wrap items-baseline gap-2">
+                <span class="text-xs sm:text-sm font-bold text-safari-darkGreen bg-amber-100/70 px-2.5 py-0.5 rounded-full">6:00 PM – 7:00 PM</span>
+                <span class="text-xs font-semibold text-amber-700 uppercase tracking-wider">Sacred Milestone</span>
+              </div>
+              <h4 class="font-title text-base sm:text-lg font-bold text-stone-900 mt-1">Christian Dedication</h4>
+              <p class="text-xs sm:text-sm text-stone-600 mt-0.5">Solemn prayer, water blessing, and welcoming Elijah into God's family with parents & godparents.</p>
+            </div>
+          </div>
+
+          <!-- Stop 2: Birthday Party -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-0 w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow">
+              🎉
+            </div>
+            <div>
+              <div class="flex flex-wrap items-baseline gap-2">
+                <span class="text-xs sm:text-sm font-bold text-safari-darkGreen bg-amber-100/70 px-2.5 py-0.5 rounded-full">7:30 PM – 8:30 PM</span>
+                <span class="text-xs font-semibold text-emerald-700 uppercase tracking-wider">Fun & Adventure</span>
+              </div>
+              <h4 class="font-title text-base sm:text-lg font-bold text-stone-900 mt-1">Birthday Party Starts</h4>
+              <p class="text-xs sm:text-sm text-stone-600 mt-0.5">Exciting safari parlor games, puppet show, special numbers, and cake candle blowing!</p>
+            </div>
+          </div>
+
+          <!-- Stop 3: Dinner -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-0 w-8 h-8 rounded-full bg-safari-terracotta text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow">
+              🍽️
+            </div>
+            <div>
+              <div class="flex flex-wrap items-baseline gap-2">
+                <span class="text-xs sm:text-sm font-bold text-safari-darkGreen bg-amber-100/70 px-2.5 py-0.5 rounded-full">8:40 PM – 9:10 PM</span>
+                <span class="text-xs font-semibold text-orange-700 uppercase tracking-wider">Jungle Feast</span>
+              </div>
+              <h4 class="font-title text-base sm:text-lg font-bold text-stone-900 mt-1">Dinner Buffet</h4>
+              <p class="text-xs sm:text-sm text-stone-600 mt-0.5">Sumptuous dinner banquet prepared by Meyers Catering Services, dessert station & refreshments.</p>
+            </div>
+          </div>
+
+          <!-- Stop 4: After Party -->
+          <div class="relative group">
+            <div class="absolute -left-[31px] sm:-left-[39px] top-0 w-8 h-8 rounded-full bg-safari-darkGreen text-white flex items-center justify-center font-bold text-xs ring-4 ring-white shadow">
+              ✨
+            </div>
+            <div>
+              <div class="flex flex-wrap items-baseline gap-2">
+                <span class="text-xs sm:text-sm font-bold text-safari-darkGreen bg-amber-100/70 px-2.5 py-0.5 rounded-full">9:15 PM – 10:00 PM onwards</span>
+                <span class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Celebration</span>
+              </div>
+              <h4 class="font-title text-base sm:text-lg font-bold text-stone-900 mt-1">After Party & Social Mingling</h4>
+              <p class="text-xs sm:text-sm text-stone-600 mt-0.5">Photo booth sessions, giving of safari souvenirs, sweet family fellowship, and toasts.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION: Gift Suggestions Panel -->
+      <section class="bg-gradient-to-br from-amber-50 via-white to-amber-50/50 p-6 sm:p-7 rounded-2xl border-2 border-safari-gold/50 shadow-safari">
+        <div class="text-center max-w-md mx-auto mb-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-safari-gold font-sans bg-safari-darkGreen text-white px-3 py-1 rounded-full inline-block">Gift Ideas</span>
+          <h3 class="font-title text-xl sm:text-2xl font-bold text-stone-900 mt-2">Elijah’s Safari Wishlist 🎁</h3>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">
+            Your presence and prayers are our biggest blessing! However, if you wish to honor Elijah with a gift, here is his handy guide:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <!-- Suggestion 1: Diapers -->
+          <div class="bg-white p-4 rounded-xl border border-stone-200/80 shadow-sm flex items-start gap-3 hover:border-safari-gold transition-all">
+            <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center text-xl shrink-0">
+              🧷
+            </div>
+            <div>
+              <h5 class="font-bold text-stone-800 text-sm">Large Diapers</h5>
+              <p class="text-xs text-stone-500 mt-0.5">Size L tape or pants diapers for our growing adventurer!</p>
+            </div>
+          </div>
+
+          <!-- Suggestion 2: 1yr Old Clothes -->
+          <div class="bg-white p-4 rounded-xl border border-stone-200/80 shadow-sm flex items-start gap-3 hover:border-safari-gold transition-all">
+            <div class="w-10 h-10 rounded-lg bg-amber-50 text-amber-800 flex items-center justify-center text-xl shrink-0">
+              👕
+            </div>
+            <div>
+              <h5 class="font-bold text-stone-800 text-sm">Baby Boy 1-Yr-Old Clothes</h5>
+              <p class="text-xs text-stone-500 mt-0.5">Comfortable play wear, cotton rompers, or safari-inspired shirts.</p>
+            </div>
+          </div>
+
+          <!-- Suggestion 3: Hygiene Essentials -->
+          <div class="bg-white p-4 rounded-xl border border-stone-200/80 shadow-sm flex items-start gap-3 hover:border-safari-gold transition-all">
+            <div class="w-10 h-10 rounded-lg bg-sky-50 text-sky-800 flex items-center justify-center text-xl shrink-0">
+              🧴
+            </div>
+            <div>
+              <h5 class="font-bold text-stone-800 text-sm">Baby Hygiene Essentials</h5>
+              <p class="text-xs text-stone-500 mt-0.5">Gentle baby wash, fragrance-free wipes, and baby moisturizing lotion.</p>
+            </div>
+          </div>
+
+          <!-- Suggestion 4: Monetary Fund -->
+          <div class="bg-white p-4 rounded-xl border border-stone-200/80 shadow-sm flex items-start gap-3 hover:border-safari-gold transition-all">
+            <div class="w-10 h-10 rounded-lg bg-rose-50 text-rose-800 flex items-center justify-center text-xl shrink-0">
+              🏦
+            </div>
+            <div class="flex-1">
+              <h5 class="font-bold text-stone-800 text-sm">Elijah's Savings Fund</h5>
+              <p class="text-xs text-stone-500 mt-0.5">Monetary gift for Elijah’s future savings / bank account.</p>
+              <button onclick="openSavingsModal()" class="mt-2 text-xs font-bold text-amber-700 hover:text-amber-900 flex items-center gap-1 underline underline-offset-2">
+                <span>View Digital Envelope & Details</span>
+                <i data-lucide="arrow-right" class="w-3 h-3"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Warm Closing Jungle Note -->
+      <section class="bg-gradient-to-r from-safari-deepGreen via-safari-darkGreen to-safari-deepGreen text-white p-6 sm:p-7 rounded-2xl border border-safari-gold/50 shadow-lg text-center relative overflow-hidden">
+        <div class="max-w-md mx-auto space-y-2">
+          <div class="text-3xl mb-1">🦁 🌿 🦒</div>
+          <h4 class="font-title text-lg sm:text-xl font-bold text-safari-goldLight">We Can't Wait to Celebrate with You!</h4>
+          <p class="text-xs sm:text-sm text-stone-200 leading-relaxed font-normal">
+            Your presence, warm prayers, and love mean the world to our family as Elijah embarks on his greatest adventure yet.
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer message -->
+      <footer class="text-center pt-2 pb-6 border-t border-stone-200 text-stone-500 text-xs space-y-2">
+        <p class="font-script text-2xl text-safari-darkGreen font-bold">With all our love,</p>
+        <p class="font-title text-sm font-bold text-stone-800 tracking-wider">ELIJAH & PARENTS</p>
+        <p class="text-[11px] text-stone-400">See you at Meyers Catering Services on November 14, 2026! 🐾</p>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- SAVINGS MODAL -->
+  <div id="savingsModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-safari-cream w-full max-w-sm rounded-3xl border-2 border-safari-gold p-6 relative shadow-2xl">
+      <button onclick="closeSavingsModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-700 bg-stone-100 rounded-full p-1.5 transition-colors">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-amber-100 border-2 border-safari-gold flex items-center justify-center text-3xl mb-3 shadow">
+          🧧
+        </div>
+        <h4 class="font-title text-lg font-bold text-safari-darkGreen">Elijah's Future Nest Egg</h4>
+        <p class="text-xs text-stone-600 mt-1">
+          For family & friends who prefer sending a monetary blessing for Elijah's nursery bank & education fund:
+        </p>
+
+        <div class="mt-4 p-3 bg-white rounded-xl border border-amber-200 text-left space-y-2 text-xs">
+          <div class="flex justify-between items-center py-1 border-b border-stone-100">
+            <span class="text-stone-500 font-semibold">Account / E-Wallet:</span>
+            <span class="font-bold text-stone-800">GCash / Maya / Bank</span>
+          </div>
+          <div class="flex justify-between items-center py-1 border-b border-stone-100">
+            <span class="text-stone-500 font-semibold">Account Name:</span>
+            <span class="font-bold text-stone-800">Elijah / Parents</span>
+          </div>
+          <div class="flex justify-between items-center py-1">
+            <span class="text-stone-500 font-semibold">Account Number:</span>
+            <span class="font-mono font-bold text-stone-900 bg-stone-100 px-2 py-0.5 rounded">0917-XXX-XXXX</span>
+          </div>
+        </div>
+
+        <p class="text-[11px] text-stone-500 italic mt-3">
+          "A red envelope or digital blessing will be lovingly saved for Elijah's future milestones. Thank you for your generosity!"
+        </p>
+
+        <button onclick="closeSavingsModal()" class="w-full mt-4 py-2.5 bg-safari-darkGreen text-safari-goldLight font-bold rounded-xl text-xs uppercase tracking-wider hover:bg-emerald-950 transition-colors">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toastMessage" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-stone-900 text-white px-5 py-2.5 rounded-full text-xs font-semibold shadow-xl border border-safari-gold flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastText">Notification text</span>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // TARGET DATE: November 14, 2026, 6:00 PM Manila Time (UTC+8)
+    // 2026-11-14T18:00:00+08:00
+    const targetDate = new Date("2026-11-14T18:00:00+08:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        document.getElementById('days').innerText = "00";
+        document.getElementById('hours').innerText = "00";
+        document.getElementById('minutes').innerText = "00";
+        document.getElementById('seconds').innerText = "00";
+        document.getElementById('countdownMessage').innerText = "🎉 Today is the Grand Safari Day! Let's Celebrate Elijah! 🎉";
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = String(days).padStart(2, '0');
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Copy Address function
+    function copyAddress() {
+      const addressText = "Meyers Catering Services, 99 Dapitan St, Barangay Sto. Domingo Ave, Quezon City, 1114 Metro Manila";
+      const dummyInput = document.createElement("textarea");
+      dummyInput.value = addressText;
+      document.body.appendChild(dummyInput);
+      dummyInput.select();
+      try {
+        document.execCommand('copy');
+        showToast("Address copied to clipboard!");
+        document.getElementById('copyAddressText').innerText = "Copied!";
+        setTimeout(() => {
+          document.getElementById('copyAddressText').innerText = "Copy";
+        }, 2500);
+      } catch (err) {
+        showToast("Unable to auto-copy, please select manually.");
+      }
+      document.body.removeChild(dummyInput);
+    }
+
+    // Add to Google Calendar generator
+    function addToGoogleCalendar() {
+      const title = encodeURIComponent("Elijah's 1st Birthday & Christian Dedication 🦁🌿");
+      const details = encodeURIComponent("You're invited to Elijah's 1st Birthday & Christian Dedication at Meyers Catering Services!\nAttire: Guests in Earth/Safari tones; Godparents in White or Blue.");
+      const location = encodeURIComponent("Meyers Catering Services, 99 Dapitan St, Barangay Sto. Domingo Ave, Quezon City, 1114 Metro Manila");
+      // PHT is UTC+8. Nov 14, 2026 18:00 PHT = 10:00 UTC; 22:00 PHT = 14:00 UTC
+      const gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20261114T100000Z/20261114T140000Z&details=${details}&location=${location}`;
+      window.open(gcalUrl, '_blank');
+    }
+
+    // Download .ICS file
+    function downloadICS() {
+      const icsContent = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Elijah 1st Birthday//EN",
+        "BEGIN:VEVENT",
+        "UID:elijah-wild-one-20261114@birthday.com",
+        "DTSTAMP:20261114T000000Z",
+        "DTSTART:20261114T100000Z",
+        "DTEND:20261114T140000Z",
+        "SUMMARY:Elijah's 1st Birthday & Christian Dedication 🦁🌿",
+        "DESCRIPTION:Expedition Itinerary: 6:00PM Dedication, 7:30PM Birthday Program, 8:40PM Dinner, 9:15PM After Party. Attire: Earth/Safari tones (Guests), White/Blue (Godparents).",
+        "LOCATION:Meyers Catering Services, 99 Dapitan St, Barangay Sto. Domingo Ave, Quezon City, 1114 Metro Manila",
+        "STATUS:CONFIRMED",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute("download", "Elijah_1st_Birthday_Dedication.ics");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showToast("Calendar event downloaded (.ics)");
+    }
+
+    // Savings Modal logic
+    function openSavingsModal() {
+      document.getElementById('savingsModal').classList.remove('hidden');
+    }
+    function closeSavingsModal() {
+      document.getElementById('savingsModal').classList.add('hidden');
+    }
+
+    // Toast helper
+    function showToast(text) {
+      const toast = document.getElementById('toastMessage');
+      const toastText = document.getElementById('toastText');
+      toastText.innerText = text;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    // Web Audio Synthesizer: Sweet, gentle safari pentatonic lullaby
+    let audioCtx = null;
+    let isPlaying = false;
+    let melodyTimer = null;
+
+    const melodyNotes = [
+      261.63, // C4
+      293.66, // D4
+      329.63, // E4
+      392.00, // G4
+      440.00, // A4
+      523.25, // C5
+      440.00, // A4
+      392.00  // G4
+    ];
+
+    function playNote(freq, duration = 0.5) {
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        // Warm marimba/bell-like timbre
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function startLullaby() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      let noteIndex = 0;
+      melodyTimer = setInterval(() => {
+        playNote(melodyNotes[noteIndex % melodyNotes.length], 0.7);
+        noteIndex++;
+      }, 600);
+    }
+
+    function stopLullaby() {
+      if (melodyTimer) clearInterval(melodyTimer);
+      melodyTimer = null;
+    }
+
+    function toggleAudio() {
+      const musicBtnText = document.getElementById('musicText');
+      const musicBtn = document.getElementById('musicToggleBtn');
+
+      if (!isPlaying) {
+        startLullaby();
+        isPlaying = true;
+        musicBtnText.innerText = "Pause Melody";
+        musicBtn.classList.add('border-safari-gold', 'bg-emerald-950');
+        showToast("Playing gentle Safari Melody 🎶");
+      } else {
+        stopLullaby();
+        isPlaying = false;
+        musicBtnText.innerText = "Play Melody";
+        musicBtn.classList.remove('bg-emerald-950');
+      }
+    }
+
+    // Launch welcome confetti on load
+    window.onload = function () {
+      setTimeout(() => {
+        confetti({
+          particleCount: 50,
+          spread: 60,
+          origin: { y: 0.3 },
+          colors: ['#D4AF37', '#5A6B48', '#8FA382']
+        });
+      }, 800);
+    };
+  </script>
+</body>
+</html>
